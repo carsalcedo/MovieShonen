@@ -1,0 +1,52 @@
+$colorR: #FF0E10;
+$colorFondo: #080A29;
+
+body{
+    background: $colorFondo;
+    font-family: 'Open Sans', sans-serif
+}
+
+
+.contenedor{
+    width:98%;
+    margin: auto;
+}
+
+header{
+    padding: 30px 40px;
+    .contenedor{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logotipo{
+        font-family: 'Bebas Neue', cursive;
+        font-family: 'Otomanopee One', sans-serif;
+        color: #fff;
+        font-size: 40px;
+        text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;   
+    }
+    .a{
+        color: #aaa;
+        text-decoration: none;
+        margin-right: 20px;
+    }
+    .a:hover,
+    .active
+    {
+        color: #fff;
+    }
+}
+
+@media screen and (max-width: 800px){
+    header{
+        .logotipo{
+            margin-bottom: 10px;
+            font-size: 30px;
+        }
+        .contenedor{
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+}
