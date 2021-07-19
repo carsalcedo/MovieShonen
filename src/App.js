@@ -7,10 +7,22 @@ import {
 } from "react-router-dom";
 import Begin from './components/movies/Begin';
 import MovieDetail from './components/movies/MovieDetail';
+import { useEffect, useState } from 'react';
+import { get } from './utils/clientHttp';
 
 
 
 function App() {
+  //useState and useEffect to movies
+  const [moviesData, setMoviesData] = useState([]);
+  useEffect(() => {
+    get("/discover/movie")
+    .then((data) => {
+        console.log(data)
+     setMoviesData(data.results);
+    });
+}, []);
+
   return (
     <div>
     <Router>
@@ -28,10 +40,10 @@ function App() {
       
       <Switch>
         <Route exact path="/movie/:movieId">
-          <MovieDetail/>
+          <MovieDetail moviesData={moviesData}/>
         </Route>
       <Route path='/'>
-       <Begin/>
+       <Begin moviesData={moviesData}/>
        </Route>
      </Switch>
 

@@ -1,12 +1,12 @@
 import MovieGrid from "./MovieGrid";
 import styles from '../../css/Begin.module.css'
 
-const Begin = () => {
+const Begin = ({moviesData}) => {
     return ( 
         <div className={styles.container}>
             <h5 className={styles.title}>Movies</h5>
             <main>
-              <MovieGrid/>
+              <MovieGrid moviesData={moviesData}/>
             </main>
         </div>
      );

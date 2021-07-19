@@ -9,13 +9,13 @@
 }
 
 .container{
-width:98%;
+width:100%;
 margin: auto;
 }
 
 .ul{
     display: grid;
-    grid-template-columns: repeat(auto-fill, 14.38em);
+    grid-template-columns: repeat(auto-fill, 10.38em);
     gap: 20px;
     padding: 40px;
     justify-content: center;
@@ -28,7 +28,7 @@ margin: auto;
     text-align: center;
 }
 .li:hover{
-    transform: scale(1.2);
+    transform: scale(1.1);
     transform-origin: center;
     transition: .3s ease all;
 }
@@ -36,8 +36,8 @@ margin: auto;
 .image{
     border-radius: 10px;
     background-color: azure;
-    width: 14.38em;
-    height: 21.25em;
+    width: 10.50em;
+    height: 17.25em;
 }
 
 @media (max-width: 560px) {

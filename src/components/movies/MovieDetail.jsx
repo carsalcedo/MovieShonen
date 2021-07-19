@@ -1,10 +1,11 @@
 import styles from '../../css/MovieDetail.module.css'
 //import Pelicula from '../Pelicula.json';
 import { useParams } from 'react-router';
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { get } from '../../utils/clientHttp';
+import MovieCarousel from './MovieCarousel';
 
-const MovieDetail = () => {
+const MovieDetail = ({moviesData}) => {
     const {movieId} = useParams();
     const [movie, setMovie] = useState(null);
 
@@ -20,6 +21,7 @@ const MovieDetail = () => {
 
     const imageUrl = 'https://image.tmdb.org/t/p/w500' + movie.backdrop_path;
     return (
+        <Fragment>
         <div className={styles.peliculaP} style={{ backgroundImage:`url(${imageUrl})` }}>
             <div className={styles.contenedor}>
                 <h3 className={styles.title}>{movie.title}</h3>
@@ -29,6 +31,8 @@ const MovieDetail = () => {
                 <button role="button" className={styles.boton}><i className="fas fa-info-circle"></i>Most Information</button>
             </div>
         </div>
+        <MovieCarousel moviesData={moviesData} />
+        </Fragment>
       );
 }
  

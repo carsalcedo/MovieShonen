@@ -1,0 +1,86 @@
+.peliculasCarousel {
+  margin-bottom: 70px;
+  align-items: center;
+}
+.peliculasCarousel .containerTitleControls {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+.peliculasCarousel .indicators button {
+  background: #fff;
+  height: 3px;
+  width: 10px;
+  cursor: pointer;
+  border: none;
+  margin-right: 2px;
+}
+.peliculasCarousel .indicators button:hover,
+.peliculasCarousel .indicators button.activo {
+  background: red;
+}
+.peliculasCarousel .mainContainer {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.peliculasCarousel .arrowLeft,
+.peliculasCarousel .arrowRight {
+  position: absolute;
+  border: none;
+  background: rgba(0, 0, 0, 0.3);
+  font-size: 40px;
+  height: 20%;
+  top: calc(50% - 20%);
+  line-height: 40px;
+  width: 50px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 500;
+  transition: 0.2s ease all;
+}
+.peliculasCarousel .arrowLeft:hover,
+.peliculasCarousel .arrowRight:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+.peliculasCarousel .arrowLeft {
+  left: 0;
+}
+.peliculasCarousel .arrowRight {
+  right: 0;
+}
+.peliculasCarousel .containerCarousel {
+  width: 100%;
+  padding: 20px 0;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+.peliculasCarousel .carousel {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.peliculasCarousel .movies {
+  min-width: 15%;
+  display: flex;
+  transition: 0.2s ease all;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (max-width: 800px) {
+  .containerCarousel {
+    overflow: visible;
+  }
+  .containerCarousel .movies {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .indicators,
+.arrowRight,
+.arrowLeft {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=MovieCarousel.module.css.map */
