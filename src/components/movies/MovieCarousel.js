@@ -1,17 +1,20 @@
 import MovieCard from "./MovieCard";
 import styles from '../../css/MovieCarousel.module.css'
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 
 
 const MovieCarousel = ({moviesData}) => {
-  const slide = useRef(null)
+  const slide = useRef(null);
+ // const intervalSlide = useRef(null);
+
   const next = () =>{
       //con la condicion se comprueba que el slide tenga elementos
     if(slide.current.children.length > 0){
         //obtener el primer elemento
         const firstElement = slide.current.children[0];
+        
         //establecer transicion
-        slide.current.style.transition = `1000ms ease-out all`;
+        slide.current.style.transition = `900ms ease-out all`;
 
         //mover
         const sizeSlide = slide.current.children[0].offsetWidth;
@@ -27,7 +30,7 @@ const MovieCarousel = ({moviesData}) => {
             slide.current.removeEventListener('transitionend', transicion);
         }
             //para cuando termine la animacion
-            slide.current.addEventListener('transitionend', transicion);
+             slide.current.addEventListener('transitionend', transicion);
       
        
     }
@@ -45,19 +48,37 @@ const MovieCarousel = ({moviesData}) => {
         slide.current.style.transform = `translateX(-${sizeSlide}px)`;
 
         setTimeout(() =>{
-            slide.current.style.transition = `1000ms ease-out all`;
+            slide.current.style.transition = `900ms ease-out all`;
             slide.current.style.transform = `translateX(0)`;
         }, 30)
     }
   }
+
+  //code to automathic slide
+  /*useEffect(() => {
+      intervalSlide.current = setInterval(() =>{
+          next();
+      }, 3000);
+      //delete interval
+      slide.current.addEventListener('mouseenter', () => {
+          clearInterval(intervalSlide.current);
+      });
+      //reanude interval
+      slide.current.addEventListener('mouseleave', () => {
+        intervalSlide.current = setInterval(() =>{
+            next();
+        }, 3000);
+    });
+  }, []);*/
   
     return (  
     <div className={styles.peliculasCarousel}>
+        <h4 className={styles.title}>Movies Recent</h4>
     <div className={styles.mainContainer}>
         <button role="button" id="arrowLeft" className={styles.arrowLeft} onClick={prev}><i className="fas fa-angle-left"></i></button>
         <div className={styles.containerCarousel}>
-            <div className={styles.carousel} ref={slide}>
-                <ul className={styles.movies} >
+            <div className={styles.carousel}>
+                <ul className={styles.movies}  ref={slide}>1
                     {moviesData.map((movie) =>
                     <MovieCard key={movie.id} movie={movie}/>
                     )}

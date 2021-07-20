@@ -1,6 +1,12 @@
 .peliculasCarousel{
     margin-bottom: 70px;
     align-items: center;
+    .title{
+        color: #fff;
+        padding-left: 2.13em;
+        font-size: 1.50em;
+        margin-bottom: auto;  
+    }
     .containerTitleControls{
         display: flex;
         justify-content: space-between;
@@ -30,7 +36,7 @@
         background: rgba(0, 0, 0, 0.3);
         font-size: 40px;
         height: 20%;
-        top: calc(50% - 20%);
+        top: calc(50% - 18%);
         line-height: 40px;
         width: 50px;
         color: #fff;

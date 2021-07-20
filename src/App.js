@@ -9,6 +9,7 @@ import Begin from './components/movies/Begin';
 import MovieDetail from './components/movies/MovieDetail';
 import { useEffect, useState } from 'react';
 import { get } from './utils/clientHttp';
+import FooterPage from './components/FooterPage';
 
 
 
@@ -50,6 +51,9 @@ function App() {
 
     </Router>
 
+    <footer>
+      <FooterPage/>
+    </footer>
     
     </div>
   );

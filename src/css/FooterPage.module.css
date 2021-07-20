@@ -1,51 +1,48 @@
-body {
-  background: #080A29;
-  font-family: "Open Sans", sans-serif;
-}
-
 .contenedor {
-  width: 98%;
-  margin: auto;
-}
-
-header {
-  padding: 30px 40px;
-}
-header .contenedor {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-header .logotipo {
+
+.logotipo {
   font-family: "Bebas Neue", cursive;
   font-family: "Otomanopee One", sans-serif;
   color: #fff;
   font-size: 40px;
   text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
 }
-header .a {
+
+.a {
   color: #aaa;
   text-decoration: none;
   margin-right: 20px;
+  font-size: 2em;
 }
-header .a:hover,
-header .active {
+
+.a:hover {
   color: #fff;
 }
 
-footer {
-  padding: 20px 30px;
+.follow {
+  color: #fff;
+  margin-left: 12.5em;
 }
 
 @media screen and (max-width: 800px) {
-  header .logotipo {
+  .logotipo {
     margin-bottom: 10px;
     font-size: 30px;
   }
-  header .contenedor {
+
+  .follow {
+    margin: auto;
+    justify-content: center;
+  }
+
+  .contenedor {
     flex-direction: column;
     text-align: center;
   }
 }
 
-/*# sourceMappingURL=App.css.map */
+/*# sourceMappingURL=FooterPage.module.css.map */
