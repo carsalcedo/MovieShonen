@@ -1,0 +1,43 @@
+.searchContainer {
+  margin-left: 4em;
+}
+.searchContainer .box {
+  position: relative;
+}
+.searchContainer .box .searchInput {
+  height: 30px;
+  width: 12.5em;
+  border-radius: 10px;
+  padding: 2px 30px 2px 10px;
+}
+.searchContainer .box .searchButton {
+  border: none;
+  background: none;
+  position: absolute;
+  right: 0.5em;
+  bottom: 0;
+  height: 100%;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+  .searchContainer {
+    margin: auto;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: -100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 2;
+  }
+
+  .searchContainer.active {
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+}
+
+/*# sourceMappingURL=Search.css.map */

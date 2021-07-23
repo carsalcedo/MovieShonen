@@ -1,0 +1,102 @@
+.contents {
+  color: #fff;
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.25em 2.5em;
+}
+.contents .title {
+  font-size: 2em;
+  text-align: center;
+}
+.contents .title span {
+  text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
+}
+.contents .contacWraper {
+  box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.3);
+  margin-top: 1em;
+}
+.contents .contacWraper .contactForm {
+  background: rgba(0, 0, 0, 0.5);
+}
+.contents .contacWraper .contactForm form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.contents .contacWraper .contactForm form .block {
+  grid-column: 1/3;
+}
+.contents .contacWraper .contactForm form p {
+  margin: 0;
+  padding: 1em;
+}
+.contents .contacWraper .contactForm form button,
+.contents .contacWraper .contactForm form input,
+.contents .contacWraper .contactForm form textarea {
+  width: 100%;
+  border: none;
+  padding: 0.7em;
+  background: none;
+  outline: none;
+  border-bottom: 1px solid #FF0E10;
+  color: #FFF;
+  overflow-y: hidden;
+}
+.contents .contacWraper .contactForm form button {
+  background: #d63031;
+  border-radius: 10px;
+  text-transform: uppercase;
+  padding: 1em;
+  cursor: pointer;
+}
+.contents .contacWraper .contactForm form button:hover,
+.contents .contacWraper .contactForm form button:focus {
+  background: #FF0E10;
+  transition: 1s ease-out;
+  outline: 0;
+}
+.contents .contacWraper .contactInfo {
+  background: black;
+  padding: 1em;
+}
+.contents .contacWraper .contactInfo h4,
+.contents .contacWraper .contactInfo ul,
+.contents .contacWraper .contactInfo p {
+  text-align: center;
+  margin: 0 0 1rem 0;
+}
+.contents .contacWraper .contactInfo ul {
+  list-style: none;
+  padding: 0;
+}
+.contents .contacWraper .contactInfo ul li {
+  padding: 0.5em;
+}
+.contents .contacWraper .contactInfo ul li i {
+  margin-right: 0.3em;
+  font-size: 1.2em;
+}
+.contents .contacWraper .contactInfo h4 i {
+  margin-right: 0.3em;
+  font-size: 1.2em;
+}
+.contents .contacWraper .contactInfo nav {
+  text-align: center;
+}
+.contents .contacWraper .contactInfo nav a {
+  font-size: 2em;
+  margin-right: 0.3em;
+  color: #aaa;
+}
+.contents .contacWraper .contactInfo nav a :hover {
+  color: #fff;
+}
+
+@media (min-width: 700px) {
+  .contacWraper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+/*# sourceMappingURL=Contactus.css.map */

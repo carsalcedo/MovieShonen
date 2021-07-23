@@ -4,16 +4,24 @@ import { useParams } from 'react-router';
 import { Fragment, useEffect, useState } from 'react';
 import { get } from '../../utils/clientHttp';
 import MovieCarousel from './MovieCarousel';
+import { Spinner } from '../Spinner';
 
 const MovieDetail = ({moviesData}) => {
     const {movieId} = useParams();
+    const [isLoading, setIsLoading] = useState(true); //state to load-time movie
     const [movie, setMovie] = useState(null);
 
     useEffect(() => {
+        setIsLoading(true);
         get("/movie/" + movieId).then((data) =>{
+            setIsLoading(false)
             setMovie(data);
         });
     }, [movieId]);
+
+    if (isLoading){
+        return <Spinner/>;
+    }
 
     if (!movie) {
         return null;

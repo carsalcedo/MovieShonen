@@ -1,0 +1,18 @@
+.spiner {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  margin-top: 12.5em;
+}
+
+.spining {
+  animation: spinner 1s infinite;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=Spinner.module.css.map */
