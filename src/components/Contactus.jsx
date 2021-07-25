@@ -5,7 +5,7 @@ import '../css/Contactus.css';
     return (
         <div className='contents'>
             <h2 className='title'>Contact<span> Us</span></h2>
-            <div className="contacWraper">
+            <div className="contacWraper animated bounceInUp">
                 <div className="contactForm">
                     <form action="">
                         <p>

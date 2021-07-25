@@ -60,7 +60,7 @@ if(isLoading){
       <button id='btSearch' onClick={hadleSearch}><i className={clickS ? "fas fa-search-minus" : "fas fa-search-plus"}/></button>
         <h2 className="logotipo">MovieShonen</h2>
         <Search clickS={clickS}/>
-        <nav className={click ? 'navMenu active' : 'navMenu'}>
+        <nav className={click ? 'navMenu active animated fadeInRight' : 'navMenu'}>
             <Link to='/' className="a active">Movies</Link>
             <Link to='/series' className="a">Series</Link>
             <Link to='/animes' className="a">Animes</Link>
