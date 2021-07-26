@@ -11,6 +11,9 @@ const MovieDetail = ({moviesData}) => {
     const [isLoading, setIsLoading] = useState(true); //state to load-time movie
     const [movie, setMovie] = useState(null);
 
+    const [clickm, setClickm] = useState(false);
+    const handleClickM = () => setClickm(!clickm);
+
     useEffect(() => {
         setIsLoading(true);
         get("/movie/" + movieId).then((data) =>{
@@ -34,10 +37,19 @@ const MovieDetail = ({moviesData}) => {
             <div className={styles.contenedor}>
                 <h3 className={styles.title}>{movie.title}</h3>
                 <p className={styles.description}>{movie.overview}</p>
-                <p className={styles.date}>Realease Date: {movie.release_date}</p>
+                <p className={styles.date}>Genres: {movie.genres.map(genre => genre.name).join(", ")}</p>
                 <button role="button" className={styles.boton}><i className="fas fa-play"></i>Display</button>
-                <button role="button" className={styles.boton}><i className="fas fa-info-circle"></i>Most Information</button>
+                <button onClick={handleClickM} role="button" className={styles.boton}><i className="fas fa-info-circle"></i>Most Information</button>
+                {clickm && 
+                <div className={`${styles.msinfo} animated fadeInUp`}>
+                <p> <strong>Ratting:</strong> {movie.popularity}</p>
+                <p>Realease Date: {movie.release_date}</p>
+                <p> <strong>Original title:</strong> {movie.original_title}</p>
+                <p> <strong>Original Language:</strong> {movie.original_language}</p>
+                </div>
+                } 
             </div>
+            
         </div>
         <MovieCarousel moviesData={moviesData} />
         </Fragment>

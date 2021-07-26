@@ -6,7 +6,9 @@ import {
   Link,
 } from "react-router-dom";
 import Begin from './components/movies/Begin';
+import Tv from './components/tv/Tv';
 import MovieDetail from './components/movies/MovieDetail';
+import TvDetail from './components/tv/TvDetail';
 import { useEffect, useState } from 'react';
 //import {useQuery} from './hooks/useQuery'
 import { get } from './utils/clientHttp';
@@ -14,6 +16,7 @@ import FooterPage from './components/FooterPage';
 import { Spinner } from './components/Spinner';
 import { Search } from './components/Search';
 import Contactus from './components/Contactus';
+
 
 
 function App() {
@@ -46,6 +49,20 @@ const handleClick = () => setClick(!click);
     });
 }, []);
 
+  //useState and useEffect to tv shows
+  const [tvData, setTvData] = useState([]);
+  useEffect(() => {
+    setIsLoading(true);
+    /*const searchUrl = search
+    ? "/search/movie?query=" + search
+    : "/discover/movie"*/
+    get("/discover/tv").then((data) => {
+        console.log(data)
+     setTvData(data.results);
+     setIsLoading(false)
+    });
+}, []);
+
 
 if(isLoading){
   return <Spinner/>;
@@ -62,7 +79,7 @@ if(isLoading){
         <Search clickS={clickS}/>
         <nav className={click ? 'navMenu active animated fadeInRight' : 'navMenu'}>
             <Link to='/' className="a active">Movies</Link>
-            <Link to='/series' className="a">Series</Link>
+            <Link to='/tv' className="a">TV Shows</Link>
             <Link to='/animes' className="a">Animes</Link>
             <Link to='/components/Contactus' className="a">Contact Us</Link>
           </nav>
@@ -74,8 +91,14 @@ if(isLoading){
         <Route exact path="/movie/:movieId">
           <MovieDetail moviesData={moviesData}/>
         </Route>
+        <Route exact path="/tv/:tvId">
+          <TvDetail tvData={tvData}/>
+        </Route>
         <Route path='/components/Contactus'>
        <Contactus/>
+       </Route>
+       <Route path='/tv'>
+       <Tv tvData={tvData}/>
        </Route>
       <Route path='/'>
        <Begin moviesData={moviesData}/>

@@ -37,7 +37,7 @@
   font-weight: normal;
   font-size: 1em;
   line-height: 1.75em;
-  max-width: 22%;
+  max-width: 25%;
   margin-bottom: 1.25em;
   background: rgba(0, 0, 0, 0.5);
 }
@@ -64,6 +64,24 @@
 .peliculaP i {
   margin-right: 1.25em;
 }
+.peliculaP .msinfo {
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 0.31em;
+  padding: 0.93em 1.87em;
+  width: auto;
+  z-index: 3;
+  position: absolute;
+  margin-left: 30%;
+  margin-top: 0.5em;
+}
+.peliculaP .msinfo p {
+  margin-bottom: 0.5em;
+}
+.peliculaP .msinfo:hover {
+  background: #fff;
+  color: #000;
+}
 
 @media screen and (max-width: 800px) {
   .peliculaP {
@@ -71,6 +89,9 @@
   }
   .peliculaP .description {
     max-width: 90%;
+  }
+  .peliculaP .msinfo {
+    margin-left: 25%;
   }
 }
 
