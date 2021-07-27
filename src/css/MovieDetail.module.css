@@ -1,6 +1,6 @@
 .peliculaP {
   font-size: 16px;
-  min-height: 30.62em;
+  min-height: 40.62em;
   color: #fff;
   background: linear-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
   background-size: cover;
@@ -27,6 +27,7 @@
   max-width: 70%;
   margin-bottom: 1.25em;
   background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
 }
 .peliculaP .description:hover {
   background: #fff;
@@ -40,6 +41,7 @@
   max-width: 25%;
   margin-bottom: 1.25em;
   background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
 }
 .peliculaP .date:hover {
   background: #fff;
@@ -86,6 +88,7 @@
 @media screen and (max-width: 800px) {
   .peliculaP {
     font-size: 14px;
+    min-height: 30.62em;
   }
   .peliculaP .description {
     max-width: 90%;

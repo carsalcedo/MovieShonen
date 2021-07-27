@@ -15,6 +15,7 @@ export function Search({clickS}) {
             <div className='box'>
                 <input className='searchInput' 
                     type="text" 
+                    placeholder="search"
                     value={searchText} 
                     onChange={(e) => setSearchText(e.target.value)}
                  />

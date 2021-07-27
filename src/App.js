@@ -16,6 +16,8 @@ import FooterPage from './components/FooterPage';
 import { Spinner } from './components/Spinner';
 import { Search } from './components/Search';
 import Contactus from './components/Contactus';
+import Anime from './components/animes/Anime';
+import AnimeDetail from './components/animes/AnimeDetail';
 
 
 
@@ -54,8 +56,8 @@ const handleClick = () => setClick(!click);
   useEffect(() => {
     setIsLoading(true);
     /*const searchUrl = search
-    ? "/search/movie?query=" + search
-    : "/discover/movie"*/
+    ? "/search/tv?query=" + search
+    : "/discover/tv"*/
     get("/discover/tv").then((data) => {
         console.log(data)
      setTvData(data.results);
@@ -63,6 +65,21 @@ const handleClick = () => setClick(!click);
     });
 }, []);
 
+//load animes top 
+const [topAnime, setTopAnime] = useState([]);
+const getTopAnimes = async () => {
+  const temp = await fetch(`https://api.jikan.moe/v3/top/anime/1/bypopularity`)
+  .then(res => res.json())
+
+  setTopAnime(temp.top);
+}
+
+useEffect(() => {
+  setIsLoading(true);
+  getTopAnimes();
+  setIsLoading(false);
+  },[]);
+console.log(topAnime);
 
 if(isLoading){
   return <Spinner/>;
@@ -94,8 +111,14 @@ if(isLoading){
         <Route exact path="/tv/:tvId">
           <TvDetail tvData={tvData}/>
         </Route>
+        <Route exact path="/anime/:animeId">
+          <AnimeDetail topAnime={topAnime}/>
+        </Route>
         <Route path='/components/Contactus'>
        <Contactus/>
+       </Route>
+       <Route path='/animes'>
+        <Anime topAnime={topAnime}/>
        </Route>
        <Route path='/tv'>
        <Tv tvData={tvData}/>
