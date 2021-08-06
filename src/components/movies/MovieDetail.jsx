@@ -37,12 +37,12 @@ const MovieDetail = ({moviesData}) => {
             <div className={styles.contenedor}>
                 <h3 className={styles.title}>{movie.title}</h3>
                 <p className={styles.description}>{movie.overview}</p>
-                <p className={styles.date}>Genres: {movie.genres.map(genre => genre.name).join(", ")}</p>
+                <p className={styles.date}><strong>Ratting:</strong> {movie.popularity}</p>
                 <button role="button" className={styles.boton}><i className="fas fa-play"></i>Display</button>
                 <button onClick={handleClickM} role="button" className={styles.boton}><i className="fas fa-info-circle"></i>Most Information</button>
                 {clickm && 
                 <div className={`${styles.msinfo} animated fadeInUp`}>
-                <p> <strong>Ratting:</strong> {movie.popularity}</p>
+                <p>Genres: {movie.genres.map(genre => genre.name).join(", ")}</p>
                 <p>Realease Date: {movie.release_date}</p>
                 <p> <strong>Original title:</strong> {movie.original_title}</p>
                 <p> <strong>Original Language:</strong> {movie.original_language}</p>

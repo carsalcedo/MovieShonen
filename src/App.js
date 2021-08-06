@@ -111,7 +111,7 @@ if(isLoading){
         <Route exact path="/tv/:tvId">
           <TvDetail tvData={tvData}/>
         </Route>
-        <Route exact path="/anime/:animeId">
+        <Route exact path="/anime/:topMal_id">
           <AnimeDetail topAnime={topAnime}/>
         </Route>
         <Route path='/components/Contactus'>

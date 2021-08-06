@@ -37,12 +37,12 @@ const TvDetail = ({tvData}) => {
             <div className={styles.contenedor}>
                 <h3 className={styles.title}>{tv.name}</h3>
                 <p className={styles.description}>{tv.overview}</p>
-                <p className={styles.date}>Genres: {tv.genres.map(genre => genre.name).join(", ")}</p>
+                <p className={styles.date}><strong>Ratting:</strong> {tv.popularity}</p>
                 <button role="button" className={styles.boton}><i className="fas fa-play"></i>Display</button>
                 <button onClick={handleClickM} role="button" className={styles.boton}><i className="fas fa-info-circle"></i>Most Information</button>
                 {clickm && 
                 <div className={`${styles.msinfo} animated fadeInUp`}>
-                <p> <strong>Ratting:</strong> {tv.popularity}</p>
+                <p>Genres: {tv.genres.map(genre => genre.name).join(", ")}</p>
                 <p> <strong>Seasons:</strong> {tv.number_of_seasons}</p>
                 <p> <strong>Episodes:</strong> {tv.number_of_episodes}</p>
                 <p>Episode Run Time: {tv.episode_run_time}min</p>

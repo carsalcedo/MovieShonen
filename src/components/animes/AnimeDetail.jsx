@@ -7,13 +7,29 @@ import AnimeCarousel from './AnimeCarousel';
 import { Spinner } from '../Spinner';
 
 const AnimeDetail = ({topAnime}) => {
-    const {animeId} = useParams();
+    const {topMal_id} = useParams();
     const [isLoading, setIsLoading] = useState(true); //state to load-time tv
     const [anime, setAnime] = useState([]);
 
     const [clickm, setClickm] = useState(false);
     const handleClickM = () => setClickm(!clickm);
     
+    const getAnimes = async () => {
+        const temp = await fetch(`https://api.jikan.moe/v3/top/anime/1/bypopularity`)
+        .then(res => res.json())
+      
+        setAnime(temp.top);
+      }
+      
+      useEffect(() => {
+        setIsLoading(true);
+        getAnimes("/anime/" + topMal_id);
+        setIsLoading(false);
+        },[topMal_id]);
+      
+    if (isLoading){
+        return <Spinner/>;
+    }
     
 
     if (!anime) {
