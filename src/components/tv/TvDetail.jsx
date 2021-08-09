@@ -5,6 +5,7 @@ import { Fragment, useEffect, useState } from 'react';
 import { get } from '../../utils/clientHttp';
 import TvCarousel from './TvCarousel';
 import { Spinner } from '../Spinner';
+import Rating from '@material-ui/lab/Rating'
 
 const TvDetail = ({tvData}) => {
     const {tvId} = useParams();
@@ -37,7 +38,7 @@ const TvDetail = ({tvData}) => {
             <div className={styles.contenedor}>
                 <h3 className={styles.title}>{tv.name}</h3>
                 <p className={styles.description}>{tv.overview}</p>
-                <p className={styles.date}><strong>Ratting:</strong> {tv.popularity}</p>
+                <div className={styles.date}><Rating name="read-only" value={tv.popularity} readOnly /></div>
                 <button role="button" className={styles.boton}><i className="fas fa-play"></i>Display</button>
                 <button onClick={handleClickM} role="button" className={styles.boton}><i className="fas fa-info-circle"></i>Most Information</button>
                 {clickm && 

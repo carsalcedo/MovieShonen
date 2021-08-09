@@ -5,6 +5,7 @@ import { Fragment, useEffect, useState } from 'react';
 import { get } from '../../utils/clientHttp';
 import MovieCarousel from './MovieCarousel';
 import { Spinner } from '../Spinner';
+import Rating from '@material-ui/lab/Rating'
 
 const MovieDetail = ({moviesData}) => {
     const {movieId} = useParams();
@@ -37,7 +38,7 @@ const MovieDetail = ({moviesData}) => {
             <div className={styles.contenedor}>
                 <h3 className={styles.title}>{movie.title}</h3>
                 <p className={styles.description}>{movie.overview}</p>
-                <p className={styles.date}><strong>Ratting:</strong> {movie.popularity}</p>
+                <div className={styles.date}><Rating name="read-only" value={movie.popularity} readOnly /></div>
                 <button role="button" className={styles.boton}><i className="fas fa-play"></i>Display</button>
                 <button onClick={handleClickM} role="button" className={styles.boton}><i className="fas fa-info-circle"></i>Most Information</button>
                 {clickm && 
