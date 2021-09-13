@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/MovieShonen/static/css/main.463ed02a.chunk.css",
+    "main.js": "/MovieShonen/static/js/main.2cf5daca.chunk.js",
+    "main.js.map": "/MovieShonen/static/js/main.2cf5daca.chunk.js.map",
+    "runtime-main.js": "/MovieShonen/static/js/runtime-main.30a089f0.js",
+    "runtime-main.js.map": "/MovieShonen/static/js/runtime-main.30a089f0.js.map",
+    "static/js/2.f76b12e4.chunk.js": "/MovieShonen/static/js/2.f76b12e4.chunk.js",
+    "static/js/2.f76b12e4.chunk.js.map": "/MovieShonen/static/js/2.f76b12e4.chunk.js.map",
+    "index.html": "/MovieShonen/index.html",
+    "static/css/main.463ed02a.chunk.css.map": "/MovieShonen/static/css/main.463ed02a.chunk.css.map",
+    "static/js/2.f76b12e4.chunk.js.LICENSE.txt": "/MovieShonen/static/js/2.f76b12e4.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.30a089f0.js",
+    "static/js/2.f76b12e4.chunk.js",
+    "static/css/main.463ed02a.chunk.css",
+    "static/js/main.2cf5daca.chunk.js"
+  ]
+}
