@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/MovieShonen/static/css/main.e23fffcc.chunk.css",
+    "main.css": "/MovieShonen/static/css/main.bbb43bcc.chunk.css",
     "main.js": "/MovieShonen/static/js/main.cba7153c.chunk.js",
     "main.js.map": "/MovieShonen/static/js/main.cba7153c.chunk.js.map",
     "runtime-main.js": "/MovieShonen/static/js/runtime-main.30a089f0.js",
@@ -8,13 +8,13 @@
     "static/js/2.ef1b6b21.chunk.js": "/MovieShonen/static/js/2.ef1b6b21.chunk.js",
     "static/js/2.ef1b6b21.chunk.js.map": "/MovieShonen/static/js/2.ef1b6b21.chunk.js.map",
     "index.html": "/MovieShonen/index.html",
-    "static/css/main.e23fffcc.chunk.css.map": "/MovieShonen/static/css/main.e23fffcc.chunk.css.map",
+    "static/css/main.bbb43bcc.chunk.css.map": "/MovieShonen/static/css/main.bbb43bcc.chunk.css.map",
     "static/js/2.ef1b6b21.chunk.js.LICENSE.txt": "/MovieShonen/static/js/2.ef1b6b21.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.30a089f0.js",
     "static/js/2.ef1b6b21.chunk.js",
-    "static/css/main.e23fffcc.chunk.css",
+    "static/css/main.bbb43bcc.chunk.css",
     "static/js/main.cba7153c.chunk.js"
   ]
 }
