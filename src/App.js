@@ -10,7 +10,7 @@ import Tv from './components/tv/Tv';
 import MovieDetail from './components/movies/MovieDetail';
 import TvDetail from './components/tv/TvDetail';
 import { useEffect, useState } from 'react';
-//import {useQuery} from './hooks/useQuery'
+import {useQuery} from './hooks/useQuery'
 import { get } from './utils/clientHttp';
 import FooterPage from './components/FooterPage';
 import { Spinner } from './components/Spinner';
@@ -33,12 +33,13 @@ const handleClick = () => setClick(!click);
   //state to spinner
   const [isLoading, setIsLoading] = useState(true);
 
-  /*const query = useQuery();
-  const search = query.get("search");
-  console.log(search)*/
+  //const query = useQuery();
+  //const search = query.get("search");
+  //console.log(search)
 
   //useState and useEffect to movies
   const [moviesData, setMoviesData] = useState([]);
+
   useEffect(() => {
     setIsLoading(true);
     /*const searchUrl = search
@@ -50,6 +51,17 @@ const handleClick = () => setClick(!click);
      setIsLoading(false)
     });
 }, []);
+
+/*useEffect(() => {
+  setIsLoading(true);
+  const searchUrl = search
+    ? "/search/movie?query=" + search
+    : "/discover/movie";
+  get(searchUrl).then((data) => {
+    setMoviesData(data.results);
+    setIsLoading(false);
+  });
+}, [search]);*/
 
   //useState and useEffect to tv shows
   const [tvData, setTvData] = useState([]);
